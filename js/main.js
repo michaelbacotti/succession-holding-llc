@@ -164,4 +164,44 @@
     style.textContent = '.fade-in { opacity: 1 !important; transform: translateY(0) !important; }';
     document.head.appendChild(style);
 
+    // ============================================
+    // Theme Toggle (Light / Dark Mode)
+    // ============================================
+
+    (function() {
+        var html = document.documentElement;
+        var STORAGE_KEY = 'theme';
+
+        function getPreferredTheme() {
+            var saved = localStorage.getItem(STORAGE_KEY);
+            if (saved === 'light' || saved === 'dark') return saved;
+            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            var btn = document.getElementById('themeToggleBtn');
+            if (btn) {
+                btn.textContent = theme === 'light' ? '☀️ Light' : '🌙 Dark';
+                btn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+            }
+        }
+
+        function toggleTheme() {
+            var current = html.getAttribute('data-theme') || getPreferredTheme();
+            var next = current === 'light' ? 'dark' : 'light';
+            localStorage.setItem(STORAGE_KEY, next);
+            applyTheme(next);
+        }
+
+        // Apply saved/system preference on load
+        applyTheme(getPreferredTheme());
+
+        // Wire up toggle button if present
+        var btn = document.getElementById('themeToggleBtn');
+        if (btn) {
+            btn.addEventListener('click', toggleTheme);
+        }
+    })();
+
 })();

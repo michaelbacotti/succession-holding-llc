@@ -812,7 +812,173 @@ footer {
     .contact-form-wrapper { padding: 1.25rem; }
 }
 
-/* Print */
+/* ============================================
+   Theme: Light Mode Overrides
+   ============================================ */
+
+:root[data-theme="light"] {
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --surface-2: #eef1f5;
+    --border: #dde1e7;
+    --text: #1a1a2e;
+    --text-dim: #5a6270;
+    --accent: #3ecf8e;
+    --accent-dim: #2a9d6e;
+    --accent-bg: rgba(62, 207, 142, 0.1);
+}
+
+:root[data-theme="light"] body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+:root[data-theme="light"] header {
+    background: var(--bg);
+    border-bottom-color: var(--border);
+}
+
+:root[data-theme="light"] .logo {
+    color: var(--text);
+}
+
+:root[data-theme="light"] .nav-links a {
+    color: var(--text-dim);
+}
+
+:root[data-theme="light"] .nav-links a:hover,
+:root[data-theme="light"] .nav-links a.active {
+    color: var(--text);
+    background: var(--surface);
+}
+
+:root[data-theme="light"] .nav-links a.active {
+    color: var(--accent);
+}
+
+:root[data-theme="light"] .mobile-menu-btn span {
+    background: var(--text);
+}
+
+:root[data-theme="light"] .surface-card,
+:root[data-theme="light"] .feature-card,
+:root[data-theme="light"] .info-block,
+:root[data-theme="light"] .resource-card,
+:root[data-theme="light"] .contact-form-wrapper,
+:root[data-theme="light"] .cta-box,
+:root[data-theme="light"] .philosophy-quote {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+:root[data-theme="light"] .accent-bg,
+:root[data-theme="light"] .hero-badge,
+:root[data-theme="light"] .resource-category {
+    background: rgba(62, 207, 142, 0.12);
+}
+
+:root[data-theme="light"] .info-box {
+    background: var(--surface);
+    border-color: var(--border);
+    border-left-color: var(--accent);
+}
+
+:root[data-theme="light"] footer {
+    border-top-color: var(--border);
+}
+
+:root[data-theme="light"] .footer-brand p,
+:root[data-theme="light"] .footer-links a,
+:root[data-theme="light"] .footer-bottom > p:first-child {
+    color: var(--text-dim);
+}
+
+:root[data-theme="light"] .footer-links h4 {
+    color: var(--text);
+}
+
+:root[data-theme="light"] .principle-item,
+:root[data-theme="light"] .faq-item,
+:root[data-theme="light"] .content-list li,
+:root[data-theme="light"] .contact-detail,
+:root[data-theme="light"] .stat-item {
+    border-color: var(--border);
+}
+
+:root[data-theme="light"] .principle-number {
+    color: var(--border);
+}
+
+:root[data-theme="light"] .contact-detail-icon {
+    background: var(--surface-2);
+    border-color: var(--border);
+}
+
+:root[data-theme="light"] .nav-links a {
+    border-bottom-color: var(--border);
+}
+
+:root[data-theme="light"] .info-note {
+    background: var(--surface-2);
+    border-color: var(--border);
+}
+
+:root[data-theme="light"] .ad-placeholder {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--text-dim);
+}
+
+:root[data-theme="light"] .btn-secondary {
+    color: var(--text);
+    border-color: var(--border);
+}
+
+:root[data-theme="light"] .form-group input,
+:root[data-theme="light"] .form-group select,
+:root[data-theme="light"] .form-group textarea {
+    background: var(--surface-2);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+:root[data-theme="light"] .stats-section {
+    border-color: var(--border);
+}
+
+:root[data-theme="light"] .page-hero {
+    border-bottom-color: var(--border);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35rem 0.6rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-family: var(--font);
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+:root[data-theme="light"] .theme-toggle {
+    color: var(--text-dim);
+    border-color: var(--border);
+}
+
+/* ============================================
+   Print
+   ============================================ */
+
 @media print {
     body { background: white; color: black; }
     header, footer, .cta-section { display: none; }

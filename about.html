@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-</head>
+<script>try{var t=localStorage.getItem("theme");if(!t||(t!=="light"&&t!=="dark"))t=window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}</script></head>
 <body>
     <header>
         <div class="container">
@@ -52,6 +52,7 @@
                     <li><a href="investment-philosophy.html">Philosophy</a></li>
                     <li><a href="educational-resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle theme">Dark</button></li>
                 </ul>
             </nav>
         </div>
