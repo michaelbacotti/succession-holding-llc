@@ -837,3 +837,36 @@ footer {
     header, footer, .cta-section { display: none; }
     .container { max-width: 100%; }
 }
+
+/* ============================================
+   Dropdown Navigation
+   ============================================ */
+
+.nav-item { position: relative; }
+
+.nav-item .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+  border-radius: 0 0 8px 8px;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  z-index: 200;
+}
+
+.nav-item:hover .dropdown { display: block; }
+
+.dropdown a {
+  display: block !important;
+  padding: 0.5rem 1rem !important;
+  color: var(--text-dim) !important;
+  white-space: nowrap;
+  line-height: 1.4 !important;
+  border-radius: 0;
+}
+
+.dropdown a:hover { color: var(--accent) !important; background: var(--accent-bg); }
